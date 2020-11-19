@@ -22,7 +22,7 @@ def predict_price(area) -> float:
     X= a[0][1:]
     Y=a[1][1:]
     x1 = numpy.array([X])
-    x1=x1-numpy.mean(x1)
+
     y1 = numpy.array([Y])
     #print(numpy.shape(x1))
     arr=numpy.array([area])
@@ -33,7 +33,6 @@ def predict_price(area) -> float:
 
     reg = LinearRegression().fit(input1,numpy.transpose(y1))
     input2 = numpy.zeros((24,1))
-    arr=arr-numpy.mean(arr)
     for i in range(24):
         input2[i,0]=arr[0,i]
 
